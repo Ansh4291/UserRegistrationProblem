@@ -18,10 +18,14 @@ public class UserRegistrationMain {
         int want;
         do {
             System.out.println("Press 1 to Check your first name is valid or not");
+            System.out.println("Press 2 to Check your Last name is valid or not");
             choose = sc.nextInt();
             switch (choose) {
                 case 1:
                     operations.validFirstName();
+                    break;
+                case 2:
+                    operations.validLastName();
                     break;
                 default:
                     System.out.println("enter valid input");

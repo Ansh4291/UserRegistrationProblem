@@ -54,4 +54,18 @@ public class Operations {
             System.out.println("Your Email Id is invalid");
         return result;
     }
+    public static boolean validPassword(){
+        System.out.println("Enter the Password:- ");
+        String password = sc.next();
+        String regix = "^[A-Za-z0-9@._-]{8,}$";
+        Pattern p1 = Pattern.compile(regix);
+        Matcher m1 = p1.matcher(password);
+        boolean result = m1.matches();
+        // if condition is to check the password is valid or not
+        if (result)
+            System.out.println("Your Password is valid");
+        else
+            System.out.println("Your Password is invalid Enter minimum 8 character");
+        return result;
+    }
 }

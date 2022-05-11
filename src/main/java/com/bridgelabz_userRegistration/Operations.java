@@ -54,16 +54,19 @@ public class Operations {
             System.out.println("Your Email Id is invalid");
         return result;
     }
+    // taking ValidPassword method
     public static boolean validPassword(){
-        System.out.println("Enter the Password atleast 1 Upper case:- ");
+        System.out.println("Enter the Password atleast 1 Special Symbol4" +
+                ":- ");
         String password = sc.next();
         /**
          * (?=.*[A-Z]) represents an upper case character that must occur at least once.
          * (?=.*[0-9]) represents a digit must occur at least once.
+         * (?+.*[@#$%^&*()] represent the special symbol at least once.
          * (?=.*[a-zA-z0-9]) represents a lower case character or number  must occur at least once.
          * {8,} represents at least 8 or more characters.
          */
-        String regix = "^(?=.*[A-z])(?=.*[0-9])([a-zA-Z0-9@._-]).{8,}$";
+        String regix = "^(?=.*[A-z])(?=.*[0-9])(?=.*[@#$%^&*()-+=])([a-zA-Z0-9@._-]).{8,}$";
         Pattern p1 = Pattern.compile(regix);
         Matcher m1 = p1.matcher(password);
         boolean result = m1.matches();
@@ -71,7 +74,7 @@ public class Operations {
         if (result)
             System.out.println("Your Password is valid");
         else
-            System.out.println("Your Password is invalid should have atleast 1 upper case");
+            System.out.println("Your Password is invalid should have atleast 1 special symbol");
         return result;
     }
 }

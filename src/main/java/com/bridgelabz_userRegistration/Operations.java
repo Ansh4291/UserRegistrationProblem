@@ -55,9 +55,9 @@ public class Operations {
         return result;
     }
     public static boolean validPassword(){
-        System.out.println("Enter the Password:- ");
+        System.out.println("Enter the Password atleast 1 Upper case:- ");
         String password = sc.next();
-        String regix = "^[A-Za-z0-9@._-]{8,}$";
+        String regix = "^[A-Z]{1}[a-zA-Z]{7,}$";
         Pattern p1 = Pattern.compile(regix);
         Matcher m1 = p1.matcher(password);
         boolean result = m1.matches();
@@ -65,7 +65,7 @@ public class Operations {
         if (result)
             System.out.println("Your Password is valid");
         else
-            System.out.println("Your Password is invalid Enter minimum 8 character");
+            System.out.println("Your Password is invalid should have atleast 1 upper case");
         return result;
     }
 }

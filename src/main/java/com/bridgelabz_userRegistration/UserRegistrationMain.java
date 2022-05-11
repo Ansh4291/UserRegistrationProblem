@@ -22,7 +22,7 @@ public class UserRegistrationMain {
             System.out.println("Press 1 to Check your first name is valid or not");
             System.out.println("Press 2 to Check your Last name is valid or not");
             System.out.println("Press 3 to Check your Email Id is valid or not");
-            System.out.println("Press 4 to Check your Password at least 1 numeric number is valid or not");
+            System.out.println("Press 4 to Check your Password at least 1 Special symbol is valid or not");
             Scanner sc = new Scanner(System.in);
             choose = sc.nextInt();
             switch (choose) {

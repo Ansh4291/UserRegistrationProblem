@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  * This method takes Last Name which starts with Capital letter and has minimum of 3 characters
- */
+
 // taking main class User Registration
 public class UserRegistrationMain {
     public static void main(String args[]) {
@@ -16,7 +16,7 @@ public class UserRegistrationMain {
         /** in main method
          * taking integer choose variable  using switch case to calling methods
          * taking integer want variable using do while loop to repeat the switch case
-         */
+
         Operations operations = new Operations();
         int choose;
         int want;
@@ -53,3 +53,4 @@ public class UserRegistrationMain {
         }while (want == 1);
     }
 }
+ */

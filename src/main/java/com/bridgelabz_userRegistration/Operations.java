@@ -41,17 +41,36 @@ public class Operations {
     }
     // taking ValidEmailId method
     public static boolean validEmailId(){
-        System.out.println("Enter the email id ");
-        String emailId = sc.next();
-        String regex = "^[a-z]{3}[a-zA-z.]{0,}+@+bl.co+[a-z]{0,}$";
-        Pattern p = Pattern.compile(regex);
-        Matcher m = p.matcher(emailId);
-        boolean result = m.matches();
-        // if condition is to check the Last name is valid or not
-        if (result)
-            System.out.println("Your email id is valid");
+        System.out.println("Enter the Email-id : ");
+        String mail_id=sc.nextLine();
+        //Expression for EmailId
+        String rejex="^[a-z]{3,}(.[-+a-z0-9]*)?@([a-z0-9]){1,}.[a-z]{2,}+(.[a-z]{2,})*";
+        //Creating pattern object
+        Pattern P1=Pattern.compile(rejex);
+        //Creating matcher object
+        Matcher M1=P1.matcher(mail_id);
+        boolean result=M1.matches();
+        //Checking whether entered Mail-id is valid or not
+        if(result)
+            System.out.println("Entered EmailId is Valid");
         else
-            System.out.println("Your Email Id is invalid");
+            System.out.println("Entered EmailId is Invalid");
+        return result;
+    }
+    // Taking validMobileNumber Method
+    public static boolean validMobileNumber(){
+        System.out.println("Enter the Mobile number");
+        String  mobileNumber = sc.next();
+        //regix function is used to check the Mobile number
+        String regix = "^[0-9]{2}\\s[0-9]{10}$";
+        Pattern p1 = Pattern.compile(regix);
+        Matcher m1 = p1.matcher(mobileNumber);
+        boolean result = m1.matches();
+        // if condition is to check the LMobile number is valid or not
+        if (result)
+            System.out.println("Your Mobile number is valid");
+        else
+            System.out.println("Your Mobile number is invalid");
         return result;
     }
     // taking ValidPassword method
@@ -62,7 +81,7 @@ public class Operations {
         /**
          * (?=.*[A-Z]) represents an upper case character that must occur at least once.
          * (?=.*[0-9]) represents a digit must occur at least once.
-         * (?+.*[@#$%^&*()] represent the special symbol at least once.
+         * (?+.*[@#$%^&*()-+=] represent the special symbol at least once.
          * (?=.*[a-zA-z0-9]) represents a lower case character or number  must occur at least once.
          * {8,} represents at least 8 or more characters.
          */

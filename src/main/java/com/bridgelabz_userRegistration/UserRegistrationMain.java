@@ -1,6 +1,8 @@
+
+
 package com.bridgelabz_userRegistration;
 
-//import static com.bridgelabz_userRegistration.Operations.sc;
+
 
 import java.util.Scanner;
 
@@ -23,6 +25,7 @@ public class UserRegistrationMain {
             System.out.println("Press 2 to Check your Last name is valid or not");
             System.out.println("Press 3 to Check your Email Id is valid or not");
             System.out.println("Press 4 to Check your Password at least 1 Special symbol is valid or not");
+            System.out.println("Press 5 to Check your Mobile number is valid or not");
             Scanner sc = new Scanner(System.in);
             choose = sc.nextInt();
             switch (choose) {
@@ -37,6 +40,9 @@ public class UserRegistrationMain {
                     break;
                 case 4:
                     operations.validPassword();
+                    break;
+                case 5:
+                    operations.validMobileNumber();
                     break;
                 default:
                     System.out.println("enter valid input");

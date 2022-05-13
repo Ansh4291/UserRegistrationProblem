@@ -8,9 +8,11 @@ public class Operations {
 
     //Taking user input
     static Scanner sc = new Scanner(System.in);
-    // taking ValidFirstName method
-    // taking fname is the first name
-    public static boolean validFirstName(String fName) {
+    /**
+     * This method takes First Name which starts with Capital letter and throws custom exception if not valid
+     * @param fName is used for comparing with regex
+     */
+    public static boolean validFirstName(String fName) throws InvalidFirstNameException{
        /** System.out.println("Enter Your first name");
         String name = sc.next();*/
         //regix function is used to check the first name
@@ -19,16 +21,18 @@ public class Operations {
         Matcher m = p.matcher(fName);
         boolean result = m.matches();
         // if condition is to check the first name is valid or not
-        /**
-        if (result)
-            System.out.println("Your First name is valid");
+
+        if (!m.matches()){
+            throw new InvalidFirstNameException("first Name should start with a Cap and should have minimum 3 chars");
+        }
         else
-            System.out.println("Your First name is invalid");
-         */
-        return result;
+        return true;
     }
-    // taking ValidLastName method
-    public static boolean validLastName(String lName) {
+    /**
+     * This method takes Last Name which starts with Capital letter and throws custom exception if not valid
+     * @param lName is used for comparing with regex
+     */
+    public static boolean validLastName(String lName) throws InvalidLastNameException {
       /**
        System.out.println("Enter the Last name");
         String nameLast = sc.next();*/
@@ -37,17 +41,15 @@ public class Operations {
         Pattern p = Pattern.compile(regix);
         Matcher m = p.matcher(lName);
         boolean result = m.matches();
-        /**
+
         // if condition is to check the Last name is valid or not
-        if (result)
-            System.out.println("Your Last name is valid");
-        else
-            System.out.println("Your Last name is invalid");
-         */
-        return result;
+        if (!m.matches()){
+            throw new InvalidLastNameException("Last Name should start with a Cap and should have minimum 3 chars");
+        }else
+        return true;
     }
     // taking ValidEmailId method
-    public static boolean validEmailId(String mailId){
+    public static boolean validEmailId(String mailId) throws InvalidEmailIdException{
       /**
         System.out.println("Enter the Email-id : ");
         String mail_id=sc.nextLine();
@@ -60,36 +62,40 @@ public class Operations {
         Matcher M1=P1.matcher(mailId);
         boolean result=M1.matches();
         //Checking whether entered Mail-id is valid or not
-        /**
-        if(result)
-            System.out.println("Entered EmailId is Valid");
-        else
-            System.out.println("Entered EmailId is Invalid");
-         */
-        return result;
+
+        if(!M1.matches()){
+            throw new InvalidEmailIdException("enter a valid email - E.g. abc.xyz@bl.co.in ");
+        }else
+            return true;
     }
-    // Taking validMobileNumber Method
-    public static boolean validMobileNumber(String mobNo){
+    /**
+     * This method checks if the entered number is valid or not and throws custom exception if not valid
+     * @param mobNo takes in the parameter as String representation of number
+     * @return it returns a boolean value true if the number is valid
+     */
+    public static boolean validMobileNumber(String mobNo) throws InvalidMobileNumberException{
        /**
         System.out.println("Enter the Mobile number");
         String  mobileNumber = sc.next();
         */
         //regix function is used to check the Mobile number
-        String regix = "^[0-9]{2}\\s[0-9]{10,}$";
+        String regix = "^[0-9]{2}\\s[0-9]{11,}$";
         Pattern p1 = Pattern.compile(regix);
         Matcher m1 = p1.matcher(mobNo);
         boolean result = m1.matches();
-       /**
+
         // if condition is to check the LMobile number is valid or not
-        if (result)
-            System.out.println("Your Mobile number is valid");
-        else
-            System.out.println("Your Mobile number is invalid");
-        */
-        return result;
+        if (m1.matches()){
+            throw new InvalidMobileNumberException("Enter the Valid Mobile number with county code eg:- 91 8764314432");
+        }else
+            return true;
     }
-    // taking ValidPassword method
-    public static boolean validPassword(String passwrd){
+    /**
+     * Method to check if the password is valid or not and throws custom exception if not valid
+     * @param passwrd takes in the passcode string as a parameter
+     * @return returns boolean true if the password matches the requirement
+     */
+    public static boolean validPassword(String passwrd) throws InvalidPasswordException{
         /**
         System.out.println("Enter the Password atleast 1 Special Symbol4 :- ");
         String password = sc.next();
@@ -105,13 +111,14 @@ public class Operations {
         Pattern p1 = Pattern.compile(regix);
         Matcher m1 = p1.matcher(passwrd);
         boolean result = m1.matches();
-        /**
+
         // if condition is to check the password is valid or not
-        if (result)
-            System.out.println("Your Password is valid");
-        else
-            System.out.println("Your Password is invalid should have atleast 1 special symbol");
-         */
-        return result;
+        if (m1.matches()){
+            throw new InvalidPasswordException("Password should Contain min 8 chars with at least: 1 capital letter, 1 numeric and exactly 1 special character ");
+        }else
+            return true;
+
+
+
     }
 }

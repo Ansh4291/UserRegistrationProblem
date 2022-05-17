@@ -12,7 +12,7 @@ public class OperationsTest {
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
         try {
-            Assertions.assertTrue(Operations.validFirstName("anshul"));
+            Assertions.assertTrue(operations.userValidate1.validate1("Anshul"));
             System.out.println("First Name is valid");
         }catch (InvalidFirstNameException e){
             System.out.println("A problem occurred :-( " + e);
@@ -31,7 +31,7 @@ public class OperationsTest {
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
         try {
-            Assertions.assertTrue(Operations.validLastName("Rathore"));
+            Assertions.assertTrue(operations.userValidate2.validate2("Rathore"));
             System.out.println("Last Name is valid");
         }catch (InvalidLastNameException e){
             System.out.println("A Problem Occurred :-( " + e);
@@ -49,7 +49,7 @@ public class OperationsTest {
     @Test
     public void givenEmailId_WhenProper_ShouldReturnTrue() {
         try {
-            Assertions.assertTrue(Operations.validEmailId("@anshulrathore1995@gmail.com"));
+            Assertions.assertTrue(operations.userValidate3.validate3("anshulrathore1995@gmail.com"));
             System.out.println("Email Id is valid ");
         }catch (InvalidEmailIdException e){
             System.out.println("A problem occurred " + e);
@@ -67,7 +67,7 @@ public class OperationsTest {
     @Test
     public void givenMobileNumber_WhenProper_ShouldReturnTrue() {
         try {
-            Assertions.assertTrue(Operations.validMobileNumber("91 874314432"));
+            Assertions.assertTrue(operations.userValidate4.validate4("91 874314432"));
             System.out.println("Mobile number is valid ");
         }catch (InvalidMobileNumberException e){
             System.out.println("A problem Occurred" + e);
@@ -85,7 +85,7 @@ public class OperationsTest {
     @Test
     public void givenPassword_WhenProper_ShouldReturnTrue()  {
         try {
-            Assertions.assertTrue(Operations.validPassword("R1athoreqww"));
+            Assertions.assertTrue(operations.userValidate5.validate5("RRathoreqww"));
             System.out.println("Password is valid");
         }catch (InvalidPasswordException e){
             System.out.println("A problem is occurred " + e);

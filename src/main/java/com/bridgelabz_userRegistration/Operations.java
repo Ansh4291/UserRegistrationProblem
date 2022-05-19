@@ -167,4 +167,18 @@ interface validPassword{
 
 
         };
-    }
+
+
+        public static boolean emailCheckList(String email) {
+            String regex = "^[a-z]{3,}(.[-+a-z0-9]*)?@([a-z0-9]){1,}.[a-z]{2,}+(.[a-z]{2,})*";
+            Pattern p = Pattern.compile(regex);
+            Matcher m1 = p.matcher(email);
+            boolean result = m1.matches();
+
+            if (result)
+                System.out.println("Email is valid.");
+            else
+                System.out.println("Email is invalid.");
+            return result;
+        }
+        }
